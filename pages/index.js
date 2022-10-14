@@ -47,10 +47,10 @@ export default function Home({ results }) {
         <h1>Welcome, to Crypto Market</h1>
         <h2>Coin Markets</h2>
 
-        <ul>
+        <div className='container'>
             { results && 
                 results.map((coin) => (
-                    <li>
+                    <div className='coin' key={coin.name.toString()}>
                         {coin.name},
                         {coin.symbol},
                         {/* {coin.image_url}, */}
@@ -58,9 +58,9 @@ export default function Home({ results }) {
                         {coin.high_24h},
                         {coin.low_24h},
                         {coin.price_change_24h},
-                    </li>
+                    </div>
             ))}
-        </ul>
+        </div>
 
       </main>
 

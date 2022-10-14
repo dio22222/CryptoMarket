@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 // Call CoinGecko API on the Back-End 
 export async function getServerSideProps() {
@@ -14,6 +15,7 @@ export async function getServerSideProps() {
 
         // Destructuring Data to only pass relevant parameters to the Front-End
         results = data.map((coin) => ({
+            id: coin.id,
             name: coin.name,
             symbol: coin.symbol,
             image_url: coin.image,
@@ -50,8 +52,10 @@ export default function Home({ results }) {
         <div className='container'>
             { results && 
                 results.map((coin) => (
-                    <div className='coin' key={coin.name.toString()}>
-                        {coin.name},
+                    <div className='coin' key={coin.id}>
+                        <Link href={`/${coin.id}`}>
+                            {coin.name}
+                        </Link>
                         {coin.symbol},
                         {/* {coin.image_url}, */}
                         {coin.current_price},
@@ -59,6 +63,7 @@ export default function Home({ results }) {
                         {coin.low_24h},
                         {coin.price_change_24h},
                     </div>
+                    
             ))}
         </div>
 

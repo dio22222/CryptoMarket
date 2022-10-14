@@ -23,21 +23,18 @@ export async function getServerSideProps() {
             price_change_24h: coin.price_change_24h
         }))
 
-        console.log(results)
-
     } catch (error) {
         // If there were any Errors, return an empty Object
         results = {}
-        console.log(error)
     }
 
     return {
-        props: { "data": { results } } 
+        props: { results }
     }
 
 }
 
-export default function Home() {
+export default function Home({ results }) {
   return (
     <>
       <Head>
@@ -48,6 +45,23 @@ export default function Home() {
 
       <main>
         <h1>Welcome, to Crypto Market</h1>
+        <h2>Coin Markets</h2>
+
+        <ul>
+            { results && 
+                results.map((coin) => (
+                    <li>
+                        {coin.name},
+                        {coin.symbol},
+                        {/* {coin.image_url}, */}
+                        {coin.current_price},
+                        {coin.high_24h},
+                        {coin.low_24h},
+                        {coin.price_change_24h},
+                    </li>
+            ))}
+        </ul>
+
       </main>
 
       <footer>

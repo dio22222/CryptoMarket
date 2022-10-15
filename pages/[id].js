@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import JsxParser from 'react-jsx-parser'
 
 export async function getServerSideProps(context) {
 
@@ -55,7 +56,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function CoinDetails({ results }) {
-    
+    let jsex = [<div>{results.description}</div>]
     return (
         <>
         <Head>
@@ -72,7 +73,10 @@ export default function CoinDetails({ results }) {
                         height={144}
                         alt={`${results.name} logo`}
                     />
-                    { results.description },
+                    <JsxParser
+                        jsx={results.description}
+                    />
+                    {/* { results.description }, */}
                     { results.current_price },
                     { results.price_change_percentage_24h },
                     { results.price_change_percentage_7d },

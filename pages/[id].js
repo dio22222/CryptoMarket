@@ -10,6 +10,7 @@ export async function getServerSideProps(context) {
         const data = await response.json()
 
         // Destructuring deeply nested Objects
+        // All Prices are fixed to USD currency
         const { name,
                 description: { en:description },
                 image: { large:image_url },

@@ -52,24 +52,24 @@ export default function Home({ results }) {
         <div className='container'>
             { results && 
                 results.map((coin) => (
-                    <div className='coin' key={coin.id}>
-                        <Link href={`/${coin.id}`}>
-                            <a>{coin.name}</a>
-                        </Link>
-                        {coin.symbol},
-                        <Image
-                          src={coin.image_url}
-                          width={144}
-                          height={144}
-                          alt={`${coin.name} logo`}
-                        />
-                        
-                        {coin.current_price},
-                        {coin.high_24h},
-                        {coin.low_24h},
-                        {coin.price_change_24h},
-                    </div>
-                    
+                    <Link href={`/${coin.id}`} key={coin.id}>
+                        <div className='coin'>
+                            {coin.name}
+                            {coin.symbol},
+                            
+                            <Image
+                                src={coin.image_url}
+                                width={144}
+                                height={144}
+                                alt={`${coin.name} logo`}
+                            />
+                            
+                            {coin.current_price},
+                            {coin.high_24h},
+                            {coin.low_24h},
+                            {coin.price_change_24h},
+                        </div>
+                    </Link>
             ))}
         </div>
 

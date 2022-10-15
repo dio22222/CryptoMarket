@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import Head from 'next/head'
 
 export async function getServerSideProps(context) {
 
@@ -58,6 +58,9 @@ export default function CoinDetails({ results }) {
     
     return (
         <>
+        <Head>
+            <title>{ results.name }</title>
+        </Head>
         <h1>Coin Details</h1>
         <div className='container'>
             { results &&

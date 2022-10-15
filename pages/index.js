@@ -54,10 +54,16 @@ export default function Home({ results }) {
                 results.map((coin) => (
                     <div className='coin' key={coin.id}>
                         <Link href={`/${coin.id}`}>
-                            {coin.name}
+                            <a>{coin.name}</a>
                         </Link>
                         {coin.symbol},
-                        {/* {coin.image_url}, */}
+                        <Image
+                          src={coin.image_url}
+                          width={144}
+                          height={144}
+                          alt={`${coin.name} logo`}
+                        />
+                        
                         {coin.current_price},
                         {coin.high_24h},
                         {coin.low_24h},

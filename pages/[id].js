@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 
 export async function getServerSideProps(context) {
 
@@ -61,8 +63,13 @@ export default function CoinDetails({ results }) {
             { results &&
                 <div className='details'>
                     { results.name },
+                    <Image
+                        src={ results.image_url }
+                        width={144}
+                        height={144}
+                        alt={`${results.name} logo`}
+                    />
                     { results.description },
-                    { results.image_url }
                     { results.current_price },
                     { results.price_change_percentage_24h },
                     { results.price_change_percentage_7d },

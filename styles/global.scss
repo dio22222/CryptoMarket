@@ -1,5 +1,9 @@
 $theme-colors: (
-    'primary': black
+    'primary': #0ec9ac,
+    'secondary': #b6339a,
+    'dark': #001530,
+    'light': #f8f8f8,
+    'muted': #5381b7
 );
 
 @import '/node_modules/bootstrap/scss/bootstrap.scss'

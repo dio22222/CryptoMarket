@@ -56,7 +56,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function CoinDetails({ results }) {
-    let jsex = [<div>{results.description}</div>]
+
     return (
         <>
         <Head>

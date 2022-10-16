@@ -45,7 +45,6 @@ export default function Home({ results }) {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main>
         <h1>Welcome, to Crypto Market</h1>
         <h2>Coin Markets</h2>
 
@@ -72,12 +71,6 @@ export default function Home({ results }) {
                     </Link>
             ))}
         </div>
-
-      </main>
-
-      <footer>
-
-      </footer>
     </>
   )
 }

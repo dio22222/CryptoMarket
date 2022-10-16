@@ -1,7 +1,11 @@
+import Nav from './Nav'
+
 export default function Layout({ children }) {
     return (
 		<>
-		<header></header>
+		<header>
+			<Nav />
+		</header>
     	<main>{children}</main>
 		<footer></footer>
 		</>

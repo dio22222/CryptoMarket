@@ -3,13 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // Call CoinGecko API on the Back-End 
-export async function getServerSideProps() {
+export async function getServerSideProps({ query }) {
 
     let results
+    let page = query.page == undefined ? 1 : Number(query.page)
+
+    // console.log(page)
     
     try {
         // Fetch Data
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false`)
         const data = await response.json()
 
         // Destructuring Data to only pass relevant parameters to the Front-End
@@ -30,12 +33,13 @@ export async function getServerSideProps() {
     }
 
     return {
-        props: { results }
+        props: { results, page }
     }
 
 }
 
-export default function Home({ results }) {
+export default function Home({ results, page }) {
+    console.log(page)
   return (
     <>
       <Head>
@@ -71,6 +75,8 @@ export default function Home({ results }) {
                         </div>
                     </Link>
             ))}
+            <Link href={`/?page=${ page > 1 ? page - 1 : 1 }`}>Previous Page</Link>
+            <Link href={`/?page=${ page + 1 }`}>Next Page</Link>
         </div>
     </>
   )

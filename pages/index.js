@@ -75,7 +75,8 @@ export default function Home({ results, page }) {
                         </div>
                     </Link>
             ))}
-            <Link href={`/?page=${ page > 1 ? page - 1 : 1 }`}>Previous Page</Link>
+            {/* <Link href={`/?page=${ page > 1 ? page - 1 : 1 }`}>Previous Page</Link> */}
+            <Link  href={`/?page=${ page > 1 ? page - 1 : 1 }`}><a className={`${ page <= 1 ? 'disabled text-muted' : '' }`}>Previous Page</a></Link>
             <Link href={`/?page=${ page + 1 }`}>Next Page</Link>
         </div>
     </>

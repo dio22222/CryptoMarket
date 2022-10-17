@@ -25,4 +25,11 @@ $theme-colors: (
 
 }
 
+.disabled {
+
+    pointer-events: none;
+    text-decoration: none;
+
+}
+
 @import '/node_modules/bootstrap/scss/bootstrap.scss'

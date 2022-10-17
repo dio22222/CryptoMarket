@@ -75,9 +75,20 @@ export default function Home({ results, page }) {
                         </div>
                     </Link>
             ))}
-            {/* <Link href={`/?page=${ page > 1 ? page - 1 : 1 }`}>Previous Page</Link> */}
-            <Link  href={`/?page=${ page > 1 ? page - 1 : 1 }`}><a className={`${ page <= 1 ? 'disabled text-muted' : '' }`}>Previous Page</a></Link>
-            <Link href={`/?page=${ page + 1 }`}>Next Page</Link>
+            <div className='pagination d-flex justify-content-center'>
+                <Link  href={`/?page=${ page > 1 ? page - 1 : 1 }`}>
+                    <a className={` mt-3 mb-3 justify-self-center ${ page <= 1 ? 'disabled text-muted' : '' }`}>
+                        <span aria-hidden="true">&laquo;</span>
+                        Previous Page
+                    </a>
+                </Link>
+                <Link href={`/?page=${ page + 1 }`}>
+                    <a className='m-3 justify-self-center'>
+                        Next Page
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </Link>
+            </div>
         </div>
     </>
   )

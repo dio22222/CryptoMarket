@@ -1,6 +1,6 @@
 export default function Nav() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-primary">
             <div className="container-fluid">
                 <a className="navbar-brand  text-primary" href="/">Crypto Market</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

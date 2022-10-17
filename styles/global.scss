@@ -3,7 +3,26 @@ $theme-colors: (
     'secondary': #b6339a,
     'dark': #001530,
     'light': #f8f8f8,
-    'muted': #5381b7
+    'muted': #5381b7,
+    'content': #154c55,
 );
+
+.coin {
+
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+
+        transform: scale(1.01);
+
+    }
+}
+
+.coin-details {
+
+    padding-bottom: 30%;
+
+}
 
 @import '/node_modules/bootstrap/scss/bootstrap.scss'

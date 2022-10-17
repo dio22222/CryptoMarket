@@ -7,8 +7,6 @@ export async function getServerSideProps({ query }) {
 
     let results
     let page = query.page == undefined ? 1 : Number(query.page)
-
-    // console.log(page)
     
     try {
         // Fetch Data
@@ -39,7 +37,6 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function Home({ results, page }) {
-    console.log(page)
   return (
     <>
       <Head>

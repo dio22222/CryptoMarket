@@ -1,6 +1,6 @@
 # CryptoMarket
 A Lightweight Next.js Application for staying up to date with the Cryptocurrency Market
-Now available on this [link](https://crypto-market-dio22222.vercel.app/)!
+- Now available on this [link](https://crypto-market-dio22222.vercel.app/)!
 
 # Dependencies
 - react-jsx-parser (You can install it with this command: npm i react-jsx-parser)
